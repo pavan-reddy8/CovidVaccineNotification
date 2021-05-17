@@ -93,8 +93,17 @@ while True:
 					# if session_available_cap>0 or session_min_age==18:  # to test email
 					if session_available_cap>0:
 						available_dates.append(session_date)
-						flag=True
-						overall_flag=True
+						try:
+							if each_session['available_capacity_dos'] != 0:
+								print('lo')
+								flag=True
+								overall_flag=True
+						except Exception as e:
+							flag=True
+							overall_flag=True
+							print ("no dose 1 or dose 2 only total doses",e)
+							pass
+						
 						# vaccine_text= "Name:"+name+",  Available:"+str(session_available_cap)+",   Age:"+str(session_min_age)+ ",   Slots:"+str(session_slot)
 				if flag:
 					vaccine_text= "Name:"+name + ",   Available Dates:"+ str(available_dates)
