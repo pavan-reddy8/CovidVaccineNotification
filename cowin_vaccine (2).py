@@ -94,7 +94,7 @@ while True:
 					if session_available_cap>0:
 						available_dates.append(session_date)
 						try:
-							if each_session['available_capacity_dos'] != 0:
+							if each_session['available_capacity_dose1'] != 0:
 								print('lo')
 								flag=True
 								overall_flag=True
